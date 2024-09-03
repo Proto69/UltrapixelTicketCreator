@@ -4,6 +4,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ReloadCommand implements CommandExecutor {
@@ -27,8 +31,12 @@ public class ReloadCommand implements CommandExecutor {
             // Getting the time after the reload
             long after = System.currentTimeMillis();
 
-            // Sending message with the total time for the reload
-            sender.sendMessage(ChatColor.GREEN + "Successfully reloaded TicketCreator in " + ChatColor.YELLOW + (after - before) + ChatColor.GREEN + " ms!");
+            long time = after - before;
+
+            Map<String, String> map = new HashMap<>();
+            map.put("time", String.valueOf(time));
+
+            UsefulMethods.sendMessage(sender, map, "reloaded");
         }
         return true;
     }

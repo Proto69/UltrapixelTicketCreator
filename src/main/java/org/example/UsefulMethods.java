@@ -1,5 +1,6 @@
 package org.example;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -42,7 +43,7 @@ public class UsefulMethods {
         return false;
     }
 
-    public static void sendMessage(Player player, Map<String, String> map, String path){
+    public static void sendMessage(CommandSender player, Map<String, String> map, String path){
         String message = UsefulMethods.getMessage(path);
 
         message = UsefulMethods.replacePlaceholders(message, map);

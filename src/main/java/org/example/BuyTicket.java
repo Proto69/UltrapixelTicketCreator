@@ -88,7 +88,10 @@ public class BuyTicket implements CommandExecutor {
 
             if (Objects.equals(UsefulMethods.readConfig("owner-check"), "true")){
                 Warp warp = api.getPlayerWarp(warpName, sender);
-
+                if (warp == null){
+                    UsefulMethods.sendMessage(player, map, "warp-not-found");
+                    return;
+                }
                 UUID ownerUUID = warp.getUUID();
 
                 UUID uuid = player.getUniqueId();

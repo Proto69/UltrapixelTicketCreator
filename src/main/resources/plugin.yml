@@ -2,7 +2,7 @@ main: org.example.TicketCreator
 name: "UltrapixelTicketCreator"
 author: "Proto68"
 api-version: 1.21
-version: 2.0.2
+version: 2.0.3
 depend: [Vault, CMI]
 
 commands:
@@ -31,4 +31,4 @@ permissions:
     default: false
   tickets.tier.5:
     description: Allows the player to buy tier V tickets
-    default: false
+    default: op
