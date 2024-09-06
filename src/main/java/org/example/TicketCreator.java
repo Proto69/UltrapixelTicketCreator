@@ -4,13 +4,17 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class TicketCreator extends JavaPlugin {
     public static FileConfiguration config;
+    public Map<Player, String> orders = new HashMap<>();
     public static Economy econ;
     @Override
     public void onEnable() {
@@ -94,7 +98,7 @@ public class TicketCreator extends JavaPlugin {
     private void registerCommands() {
         // Registers the reload command
         Objects.requireNonNull(this.getCommand("tickets")).setExecutor(this);
-        Objects.requireNonNull(this.getCommand("tickets")).setTabCompleter(new PluginTabCompleter());
+        Objects.requireNonNull(this.getCommand("tickets")).setTabCompleter(new PluginTabCompleter(this));
     }
 
 }

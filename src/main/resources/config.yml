@@ -104,9 +104,16 @@ tiers:
       - "Use it precisely!"
 
 messages:
+  # No available placeholders
   prefix: "&6&lTickets"
   usage: "&cUsage: /tickets buy <tier> <warp> <quantity?>"
   reloaded: "&aSuccessfully reloaded in %time%ms!"
+  no-orders: "&cYou don't have unconfirmed orders!"
+  cancelled-order: "&aYour order was cancelled!"
+  confirm-order: "&a&l[Confirm]"
+  confirm-order-hover: "&aClick to confirm the order and receive the tickets!"
+  cancel-order: "&c&l[Cancel]"
+  cancel-order-hover: "&cClick to cancel the order!"
 
   # Available placeholders:
   # %warpName%, %price%, %quantity%, %tier% (I, II, III...), %balance%
@@ -115,5 +122,7 @@ messages:
   not-enough-space: "&c&lYou need more space in the inventory!"
   successful-purchase: "&aYou successfully purchased %quantity% Tier (%tier%) ticket/s for %warpName% for $%price%!"
   warp-not-found: "&cThere is no warp with this name!"
+  unconfirmed-order: "&cYou have unconfirmed order! You should confirm/cancel it first by /tickets buy confirm/cancel!"
+  placed-order: "&eThe order total is &b%price%"
   # Here the only placeholder is %tier%
   no-tier-permission: "&c&lYou don't have permission to purchase Tier %tier% tickets!"

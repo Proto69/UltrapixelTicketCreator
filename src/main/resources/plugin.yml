@@ -2,13 +2,13 @@ main: org.example.TicketCreator
 name: "UltrapixelTicketCreator"
 author: "Proto68"
 api-version: 1.21
-version: 2.0.3
+version: 2.1.0
 depend: [Vault, CMI]
 
 commands:
   tickets:
     description: Base command for the UTC plugin.
-    usage: /<command> <subcommand>
+    usage: /tickets <subcommand>
 
 permissions:
   tickets.reload:
@@ -31,4 +31,4 @@ permissions:
     default: false
   tickets.tier.5:
     description: Allows the player to buy tier V tickets
-    default: op
+    default: false
